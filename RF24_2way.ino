@@ -1,5 +1,5 @@
 #include <SPI.h>            //Serial Peripheral Interface library
-#include <nRF24L01.h>       //for the nRF24l01 chip
+#include <nRF24L01.h>       //https://github.com/nRF24/RF24
 #include <RF24.h>           //to access the RF24 class
 
 #define CE_pin 7    //define Chip Enable (CE) and Chip Select Not (CSN) pins here
@@ -16,7 +16,7 @@ void setup()
   Serial.begin(9600);
   node = serialModifyRole(node);  
   //Use the Arduino IDE serial monitor to change node identity 
-  //(Disable this and change default value in declaration if communication model is used in project without an interface)
+  //(Disable this and change default value in declaration if communication model is used in a project without an interface)
   
   radio.begin();                        
   radio.setPALevel(RF24_PA_MIN);              //set power level (MIN, LOW, HIGH, MAX)
@@ -53,7 +53,7 @@ void loop()
     }
   }
 
-    if(node == 1)     //behaviour for node 0
+    if(node == 1)     //behaviour for node 1
   {
     radio.startListening();
     int valueReceived;
