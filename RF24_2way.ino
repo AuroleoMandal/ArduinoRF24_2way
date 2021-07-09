@@ -104,7 +104,7 @@ int serialModifyRole(int defaultNodeVal)    //modify node using serial monitor
   else
   {
     Serial.print("Input not valid, using default node = ");
-    Serial.println(node);
+    Serial.println(defaultNodeVal);
     return defaultNodeVal;
   }
   delay(1000);
